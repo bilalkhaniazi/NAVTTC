@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Responsive Layout</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #topbanner {
+            background-color: black;
+            color: white;
+            padding: 2px 4px;
+            text-align: center;
+        }
+
+        #topbanner a {
+            font: inherit;
+            font-size: small;
+            color: white;
+            margin: 2px;
+            padding: 2px 2px;
+            text-decoration: none;
+        }
+
+        #navpara {
+            font-size: small;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            color: black;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 40px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 40px;
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav a,
+        nav button {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right button {
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-right .login {
+            background-color: rgb(217, 217, 217);
+            border-radius: 25px;
+        }
+
+        .nav-right .signup {
+            background-color: yellow;
+            border-radius: 25px;
+        }
+
+        .search-icon,
+        .lang-icon {
+            font-size: 18px;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: left;
+        }
+
+        .firstsection img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .firstdiv {
+            max-width: 45%;
+        }
+
+        .firstdiv h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .firstdiv p {
+            font-size: 1.2em;
+        }
+
+        .firstdiv button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .secondsection {
+            background-color: #241c15;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .secondsection {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+
+        .secondsection h2 {
+            font-size: 3em;
+            margin: 0 10px 0 0;
+        }
+
+        .secondsection p {
+            font-size: 1em;
+            margin: 0 10px 0 0;
+        }
+
+        .thirdsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: left;
+        }
+
+        .thirdsection img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .thirddiv {
+            max-width: 45%;
+        }
+
+        .thirddiv h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .thirddiv p {
+            font-size: 1.2em;
+        }
+
+        .thirddiv button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        #thirdsectionh1 {
+            font-size: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fourthsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: left;
+
+        }
+
+        .fourthsection img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .fourthdiv {
+            max-width: 45%;
+
+        }
+
+        .fourthdiv h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .fourthdiv p {
+            font-size: 1.2em;
+        }
+
+        .fourthdiv button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .fifthsection {
+            font-size: larger;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fbeeca;
+            padding: 50px;
+            text-align: center;
+            gap: 10px;
+            padding: 150px
+        }
+
+        .sixthsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: left;
+        }
+
+        .sixthsection img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .sixthdiv {
+            max-width: 45%;
+        }
+
+        .sixthdiv h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .sixthdiv p {
+            font-size: 1.2em;
+        }
+
+        .sixthdiv button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        #sixthsectionh1 {
+            font-size: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .seventhsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: left;
+
+        }
+
+        .seventhsection img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .seventhdiv {
+            max-width: 45%;
+
+        }
+
+        .seventhdiv h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .seventhdiv p {
+            font-size: 1.2em;
+        }
+
+        .seventhdiv button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .eighthsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            align-items: left;
+        }
+
+        .ninthsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            align-items: left;
+        }
+
+        .ninthdiv {
+            max-width: 45%;
+        }
+
+        .ninthdiv h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .ninthdiv p {
+            font-size: 1.2em;
+        }
+
+        .ninthdiv button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .pricing-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .pricing-header {
+            margin-bottom: 40px;
+        }
+
+        .pricing-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .pricing-header select {
+            padding: 10px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        .pricing-table {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            width: 250px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.highlight {
+            border: 2px solid yellow;
+        }
+
+        .pricing-card h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: gray;
+            text-decoration: line-through;
+        }
+
+        .pricing-card h4 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .pricing-card p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pricing-card li {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .pricing-card button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+
+        .pricing-section button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .tenthsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: left;
+        }
+
+        .tenthsection img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .tenthdiv {
+            max-width: 45%;
+        }
+
+        .tenthdiv h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .tenthdiv p {
+            font-size: 1.2em;
+        }
+
+        .tenthdiv button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #b1b1b1;
+            border: #000;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        #tenthsectionh1 {
+            font-size: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .eleventhsection {
+            background-color: #241c15;
+            color: white;
+            padding: 120px;
+            text-align: center;
+        }
+
+
+
+        .eleventhsection h2 {
+            font-size: 2em;
+            margin: 0 10px 0 0;
+        }
+
+        .eleventhsection button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #eeff00;
+            border: #000;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .site-footer {
+            background-color: #e7b75f;
+            color: #333;
+            padding: 20px 50px;
+            font-size: 0.9em;
+        }
+        
+        .footer-disclaimer p {
+            margin: 5px 0;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: #000;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 5px;
+        }
+        
+        .footer-column ul li {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .footer-column ul li {
+            text-decoration: underline;
+        }
+        
+        .footer-column button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #eeff00;
+            border: #000;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .footer-bottom-info {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .footer-bottom-info a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .footer-bottom-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-bottom-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .footer-bottom-intuit {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .footer-bottom-social img,
+        .footer-bottom-intuit img,
+        .footer-bottom-links img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .footer-bottom-intuit img {
+            width: auto;
+            height: 24px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="topbanner">
+        <p id="navpara">Boost your ROI with the industry-leading email marketing platform.
+            <a href="#">Start today</a>
+        </p>
+    </div>
+
+    <header>
+        <img src="/icons/mailchiplogo.svg" alt="Logo">
+        <nav>
+            <div class="dropdown">
+                <a href="#">Solutions and Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                    <a href="#">Option 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Resources</a>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                    <a href="#">Option 3</a>
+                </div>
+            </div>
+            <a href="#">Switch to Mailchimp</a>
+            <a href="#">Pricing</a>
+        </nav>
+        <div class="nav-right">
+            <span class="search-icon"><img src="/icons/searchicon.svg" width="25" height="25" alt="Search"></span>
+            <div class="dropdown">
+                <span class="lang-icon"><img src="/icons/languageicon.png" width="35" height="5" alt="Language"></span>
+                <div class="dropdown-content">
+                    <a href="#">EN</a>
+                    <a href="#">ES</a>
+                    <a href="#">FR</a>
+                </div>
+            </div>
+            <span>Sales: +1 (800) 315-5939</span>
+            <button class="login">Log In</button>
+            <button class="signup">Sign Up</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="firstsection">
+            <div class="firstdiv">
+                <p id="sec1div1p1">DIGITAL MARKETING TEMPLATES</p>
+                <h1>Engage your customers with beautifully-made emails</h1>
+                <p id="sec1div1p2">Create engaging content quickly with inspiration from 130+ industry-specific email
+                    templates based on your intent.</p>
+                <button class="get-started">Get Started</button>
+            </div>
+            <img src="/images/firstsection.jpg" alt="First Section Image">
+        </section>
+
+        <section class="secondsection">
+            <div>
+                <h2>#1 in email</h2>
+                <p>
+                    and marketing automation platform
+                </p>
+            </div>
+            <div>
+                <h2>8 million</h2>
+                <p>
+                    data-backed recommendations
+                </p>
+            </div>
+            <div>
+                <h2>500 million</h2>
+                <p>
+                    emails sent every single day
+                </p>
+            </div>
+            <div>
+                <h2>>99%</h2>
+                <p>
+                    email deliverability (average)
+                </p>
+            </div>
+        </section>
+        <h1 id="thirdsectionh1">Design in less time</h1>
+        <section class="thirdsection">
+            <div class="thirddiv">
+                <h1>Build optimized landing pages in minutes</h1>
+                <p id="sec3div1p1">With Mailchimp’s help, you can grow your audience and online presence with ease. Our
+                    library of templates includes mobile-optimized and conversion-driving designs geared toward today’s
+                    users and built by trusted experts.</p>
+                <button class="Explore-landing-pages">Explore landing pages</button>
+            </div>
+            <img src="/images/second section.avif" alt="First Section Image">
+        </section>
+        <section class="fourthsection">
+            <img src="/images/fourth section.avif" alt="First Section Image">
+            <div class="fourthdiv">
+                <h1>Pick and personalize the design that’s just right</h1>
+                <p id="sec4div1p1">WSave time with elegant pre-made templates and see the difference a great layout can
+                    make to your audience.</p>
+                <button class="Browse-our-templates">Browse our templates</button>
+            </div>
+        </section>
+        <section class="fifthsection">
+            <div>
+                <br>
+                <h2><i>
+                        "It's been such a great tool for us, way beyond social media, which is why we've consistently
+                        relied on the platform as the main driver of our sales. It’s allowed us to create a more
+                        personal connection with our audience.”
+                        <i></h2>
+                <br>
+            </div>
+            <div>
+                <p>
+                    -Emma Teal Laukitis, Co-founder at Salmon Sisters US
+                </p>
+                <br>
+            </div>
+        </section>
+        <h1 id="sixthsectionh1">Create more engaging content</h1>
+        <section class="sixthsection">
+            <div class="sixthdiv">
+                <h1>Break through writer’s block using generative AI</h1>
+                <p id="sec6div1p1">When you know what to say but need help with how to say it—or you just need it done
+                    fast—our generative AI tool is there. It can build body copy, subject lines, headlines, and more
+                    based on your ideas.*</p>
+                <button class="Explore-content-creation">Explore content creation</button>
+            </div>
+            <img src="/images/sixth section.avif" alt="Sixth Section Image">
+        </section>
+        <section class="seventhsection">
+            <img src="/images/seventh section.avif" alt="Seventh Section Image">
+            <div class="seventhdiv">
+                <h1>Pre-built automations made to deliver ROI</h1>
+                <p id="sec7div1p1">Reach, engage, and convert more customers at scale with 90+ pre-built automation
+                    journeys based on marketing best practices.</p>
+                <button class="Explore-pre-built-journeys">Explore pre-built journeys</button>
+            </div>
+        </section>
+        <section class="eighth section">
+            <img src="/images/eighth section.avif" width="710" height="600" alt="Eighth Section Image">
+            <img src="/images/eighth(2) section.avif" width="710" height="600" alt="Eighth Section Image">
+        </section>
+        <section class="ninthsection">
+            <div class="ninthdiv">
+                <h1>Break through writer’s block using generative AI</h1>
+                <p id="sec9div1p1">When you know what to say but need help with how to say it—or you just need it done
+                    fast—our generative AI tool is there. It can build body copy, subject lines, headlines, and more
+                    based on your ideas.*</p>
+                <button class="Explore-content-creation">Explore content creation</button>
+                <h1>Pre-built automations made to deliver ROI</h1>
+                <p id="sec9div1p2">Reach, engage, and convert more customers at scale with 90+ pre-built automation
+                    journeys based on marketing best practices.</p>
+                <button class="Explore-pre-built-journeys">Explore pre-built journeys</button>
+            </div>
+        </section>
+        <section class="pricing-section">
+            <div class="pricing-header">
+                <h1>Find the right plan</h1>
+                <select>
+                    <option>How many contacts do you have?</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="5000">5000</option>
+                </select>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-card">
+                    <h2>Premium</h2>
+                    <h3>$350</h3>
+                    <h4>$262.50 / month for 12 months</h4>
+                    <ul>
+                        <li>Phone & Priority Support</li>
+                        <li>Custom-coded and Pre-built Email Templates</li>
+                        <li>Multivariate and A/B Testing</li>
+                        <li>Enhanced Automated Customer Journeys</li>
+                        <li>Dedicated Personalized Onboarding</li>
+                        <li>Predictive Segmentation</li>
+                        <li>Campaign Manager</li>
+                    </ul>
+                    <button>Buy Now</button>
+                </div>
+                <div class="pricing-card highlight">
+                    <h2>Standard</h2>
+                    <h3>$20</h3>
+                    <h4>$15 / month for 12 months</h4>
+                    <ul>
+                        <li>24/7 Email & Chat Support</li>
+                        <li>Custom-coded and Pre-built Email Templates</li>
+                        <li>Multivariate and A/B Testing</li>
+                        <li>Enhanced Automated Customer Journeys</li>
+                        <li>Personalized Onboarding</li>
+                        <li>Predictive Segmentation</li>
+                        <li>Campaign Manager</li>
+                    </ul>
+                    <button>Buy Now</button>
+                </div>
+                <div class="pricing-card">
+                    <h2>Essentials</h2>
+                    <h3>$13</h3>
+                    <h4>$9.75 / month for 12 months</h4>
+                    <ul>
+                        <li>24/7 Email & Chat Support</li>
+                        <li>Pre-built Email Templates</li>
+                        <li>A/B Testing</li>
+                        <li>Basic Automated Customer Journeys</li>
+                    </ul>
+                    <button>Buy Now</button>
+                </div>
+                <div class="pricing-card">
+                    <h2>Free</h2>
+                    <h4>$0 / month</h4>
+                    <ul>
+                        <li>Email support for first 30 days</li>
+                        <li>Pre-built Email Templates</li>
+                    </ul>
+                    <button>Sign Up Free</button>
+                </div>
+            </div>
+            <button class="see-pricing-details"><i>See pricing details.</i></button>
+        </section>
+        <section class="tenthsection">
+            <div class="tenthdiv">
+                <h1>Need to hire a helping hand? We got you.</h1>
+                <p id="sec10div1p1">From a quick template design to full-service campaign management, our global
+                    community of 850+ trusted experts does it all.</p>
+                <button class="explore-mailchimp-experts">Explore Mailchimp Experts</button>
+            </div>
+            <img src="/images/tenth section.jpg" alt="First Section Image">
+        </section>
+        <section class="eleventhsection">
+            <div class="eleventhdiv">
+                <h2>Millions of users trust us with their email marketing. You can too.</h2>
+            </div>
+            <button class="get-started">Get started</button>
+        </section>
+        <footer class="site-footer">
+            <div class="footer-disclaimer">
+                <p>*Disclaimers</p>
+                <p>#1 email marketing platform: Based on December 2023 publicly available data on competitors’ number of customers.</p>
+                <p>8.2 million data-backed recommendations: Based on 2022 data for the following products: Product recommendations, Send Time Optimization, A/B testing, CLV segmentation, Likelihood to Purchase Segmentation, and PBI.</p>
+                <p>Intuit Assist: Intuit Assist functionality (beta) is available to certain users with Premium, Standard and Legacy plans in select countries in English only. Access to Intuit Assist is available at no additional cost at this time. Pricing, terms, conditions, special features and service options are subject to change without notice. Availability of features and functionality varies by plan type. Features may be broadly available soon but represents no obligation and should not be relied on in making a purchasing decision. For details, please view Mailchimp’s various plans and pricing.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Email Marketing and Newsletter Templates</a>
+                <a href="#">Landing Page Design Inspiration</a>
+                <a href="#">Email Automation</a>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Why Mailchimp?</a></li>
+                        <li><a href="#">Product Updates</a></li>
+                        <li><a href="#">Email Marketing</a></li>
+                        <li><a href="#">Websites</a></li>
+                        <li><a href="#">Transactional Email</a></li>
+                        <li><a href="#">How We Compare</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Marketing Library</a></li>
+                        <li><a href="#">Free Marketing Tools</a></li>
+                        <li><a href="#">Marketing Glossary</a></li>
+                        <li><a href="#">Integrations Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Agencies & Freelancers</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="#">Give Where You Live</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Hire an Expert</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Talk to Sales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Mailchimp presents</h3>
+                    <p>Films, podcasts, and original series that celebrate the entrepreneurial spirit.</p>
+                    <button class="check-it-out">Check it out</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="#"><img src="/icons/icon-ios.svg" alt="Download on the App Store"></a>
+                    <a href="#"><img src="/icons/icon-android.svg" alt="Get it on Google Play"></a>
+                </div>
+                <div class="footer-bottom-info">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Legal</a>
+                    <a href="#">Cookie Preferences</a>
+                </div>
+                <div class="footer-bottom-social">
+                    <a href="#"><img src="/icons/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="/icons/x.svg" alt="Twitter"></a>
+                    <a href="#"><img src="/icons/linkedin.svg" alt="LinkedIn"></a>
+                    <a href="#"><img src="/icons/insta.svg" alt="Instagram"></a>
+                    <a href="#"><img src="/icons/yt.svg" alt="YouTube"></a>
+                    <a href="#"><img src="/icons/pintrest.svg" alt="Pinterest"></a>
+                </div>
+            </div>
+        </footer>        
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background-image {
+            background-image: url("/images uomo/blog_title_bg.jpg"); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+        }
+        .tab-active {
+            border-bottom: 2px solid black;
+        }
+    </style>
+    <script>
+        function filterBlog(category) {
+            const allBlogs = document.querySelectorAll('.blog');
+            allBlogs.forEach(blog => {
+                blog.style.display = 'none';
+                if (category === 'all' || blog.classList.contains(category)) {
+                    blog.style.display = 'block';
+                }
+            });
+            
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('tab-active'));
+            document.getElementById(category).classList.add('tab-active');
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+<!-- Header Section -->
+<header>
+    <!-- Top Bar -->
+    <div class="bg-gray-800 text-white flex justify-between items-center p-2">
+        <div class="flex items-center">
+            <img src="/images uomo/envato.svg" alt="Envato Market" class="h-6 mr-2">
+        </div>
+        <button class="bg-green-500 text-white px-4 py-2 rounded">Buy now</button>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <img src="/images uomo/uomo.webp" alt="UQM Logo" class="h-8">
+            </div>
+            <nav class="hidden lg:flex space-x-4 ml-10" id="nav-menu">
+                <a href="/index6.html" class="text-red-500">Home</a>
+                <a href="/shop.html" class="text-gray-700 hover:text-gray-900">Shop</a>
+                <a href="/blog.html" class="text-gray-700 hover:text-gray-900">Blog</a>
+                <a href="/pages.html" class="text-gray-700 hover:text-gray-900">Pages</a>
+                <a href="/about.html" class="text-gray-700 hover:text-gray-900">About</a>
+                <a href="/contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
+            </nav>
+            <div class="flex space-x-4 items-center ml-auto">
+                <button><img src="/images uomo/search.png" alt="Search" class="h-5"></button>
+                <button><img src="/images uomo/id.png" alt="User" class="h-5"></button>
+                <button><img src="/images uomo/heart.png" alt="Favorites" class="h-5"></button>
+                <div class="relative">
+                    <button><img src="/images uomo/cart.png" alt="Cart" class="h-5"></button>
+                    <span class="absolute top-0 right-0 bg-yellow-500 text-white text-xs rounded-full px-1">0</span>
+                </div>
+                <button class="block lg:hidden" id="menu-button">
+                    <img src="/images uomo/menu.png" alt="Menu" class="h-5">
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+    <!-- Blog Banner Section -->
+    <section class="background-image relative h-96 flex items-center">
+        <div class="container mx-auto text-center">
+            <h1 class="text-6xl font-bold text-black">THE BLOG</h1>
+            <div class="mt-4">
+                <nav class="flex justify-center space-x-4">
+                    <button id="all" class="tab tab-active px-4 py-2 text-black" onclick="filterBlog('all')">ALL</button>
+                    <button id="company" class="tab px-4 py-2 text-black" onclick="filterBlog('company')">COMPANY</button>
+                    <button id="fashion" class="tab px-4 py-2 text-black" onclick="filterBlog('fashion')">FASHION</button>
+                    <button id="style" class="tab px-4 py-2 text-black" onclick="filterBlog('style')">STYLE</button>
+                    <button id="trends" class="tab px-4 py-2 text-black" onclick="filterBlog('trends')">TRENDS</button>
+                    <button id="beauty" class="tab px-4 py-2 text-black" onclick="filterBlog('beauty')">BEAUTY</button>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+        <!-- Blog Posts Section -->
+        <section class="container mx-auto py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="blog all">
+                    <img src="/images uomo/blog-1.jpg" alt="Blog 1" class="w-full h-64 object-cover mb-4">
+                    <div>
+                        <p class="text-gray-500 text-sm">BY ADMIN | APRIL 05, 2023</p>
+                        <h2 class="font-bold text-xl mb-2">Woman with good shoes is never be ugly place</h2>
+                        <p class="text-gray-600 mb-4">Mida one brought greater also morning green saying had good. Open stars day let over gathered, grass face one every light of under.</p>
+                        <a href="#" class="text-black underline">CONTINUE READING</a>
+                    </div>
+                </div>
+                <div class="blog all">
+                    <img src="/images uomo/blog-2.jpg" alt="Blog 2" class="w-full h-64 object-cover mb-4">
+                    <div>
+                        <p class="text-gray-500 text-sm">BY ADMIN | APRIL 05, 2023</p>
+                        <h2 class="font-bold text-xl mb-2">5 Tips to Increase Your Online Sales</h2>
+                        <p class="text-gray-600 mb-4">Mida one brought greater also morning green saying had good. Open stars day let over gathered, grass face one every light of under.</p>
+                        <a href="#" class="text-black underline">CONTINUE READING</a>
+                    </div>
+                </div>
+                <div class="blog all">
+                    <img src="/images uomo/blog-3.jpg" alt="Blog 3" class="w-full h-64 object-cover mb-4">
+                    <div>
+                        <p class="text-gray-500 text-sm">BY ADMIN | APRIL 05, 2023</p>
+                        <h2 class="font-bold text-xl mb-2">Tree earth fowl given moveth deep lesser After</h2>
+                        <p class="text-gray-600 mb-4">Mida one brought greater also morning green saying had good. Open stars day let over gathered, grass face one every light of under.</p>
+                        <a href="#" class="text-black underline">CONTINUE READING</a>
+                    </div>
+                </div>
+                <div class="blog all">
+                    <img src="/images uomo/blog-4.jpg" alt="Blog 4" class="w-full h-64 object-cover mb-4">
+                    <div>
+                        <p class="text-gray-500 text-sm">BY ADMIN | APRIL 05, 2023</p>
+                        <h2 class="font-bold text-xl mb-2">Given Set was without from god divide rule Hath</h2>
+                        <p class="text-gray-600 mb-4">Mida one brought greater also morning green saying had good. Open stars day let over gathered, grass face one every light of under.</p>
+                        <a href="#" class="text-black underline">CONTINUE READING</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-gray-600">SHOWING 36 OF 497 ITEMS</p>
+                <div class="relative w-3/4 mx-auto h-2 bg-gray-300 mt-2">
+                    <div class="absolute top-0 left-0 h-2 bg-black" style="width: 39%;"></div>
+                </div>
+                <button class="mt-4 px-8 py-2 bg-black text-white">SHOW MORE</button>
+            </div>
+        </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-200 py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-left">
+            <!-- Logo and Contact -->
+            <div>
+                <img src="/images uomo/uomo.webp" alt="UQM Logo" class="h-8 mb-4">
+                <p>1418 River Drive, Suite 35 Cottonhall, CA 96222 United States</p>
+                <p class="mt-2">sale@uomo.com</p>
+                <p class="mt-2">+1 246-345-0695</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#"><img src="/images uomo/facebook.svg" alt="Facebook" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/x.svg" alt="Twitter" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/insta.svg" alt="Instagram" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/yt.svg" alt="YouTube" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/pintrest.svg" alt="Pinterest" class="h-6"></a>
+                </div>
+            </div>
+
+            <!-- Company Links -->
+            <div>
+                <h3 class="font-bold mb-4">COMPANY</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Careers</a></li>
+                    <li><a href="#" class="hover:underline">Affiliates</a></li>
+                    <li><a href="#" class="hover:underline">Blog</a></li>
+                    <li><a href="#" class="hover:underline">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Shop Links -->
+            <div>
+                <h3 class="font-bold mb-4">SHOP</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">New Arrivals</a></li>
+                    <li><a href="#" class="hover:underline">Accessories</a></li>
+                    <li><a href="#" class="hover:underline">Men</a></li>
+                    <li><a href="#" class="hover:underline">Women</a></li>
+                    <li><a href="#" class="hover:underline">Shop All</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Links -->
+            <div>
+                <h3 class="font-bold mb-4">HELP</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Customer Service</a></li>
+                    <li><a href="#" class="hover:underline">My Account</a></li>
+                    <li><a href="#" class="hover:underline">Find a Store</a></li>
+                    <li><a href="#" class="hover:underline">Legal & Privacy</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                    <li><a href="#" class="hover:underline">Gift Card</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe -->
+            <div>
+                <h3 class="font-bold mb-4">SUBSCRIBE</h3>
+                <p class="mb-4">Be the first to get the latest news about trends, promotions, and much more!</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email address" class="p-2 flex-grow border border-gray-400">
+                    <button type="submit" class="p-2 bg-black text-white">Submit</button>
+                </form>
+                <div class="mt-8">
+                    <img src="/images uomo/payment-options.png" alt="Secure payments" class="w-48">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-sm text-gray-600">
+            <p>&copy;2024 Uomo</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Uomo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background-image {
+            background-image: url("/background.webp"); /* Replace with your background design image */
+            background-size: cover;
+            background-position: center;
+            background-color: #f5e5e0;
+        }
+        .tab-active {
+            border-bottom: 2px solid black;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<!-- Header Section -->
+<header>
+    <!-- Top Bar -->
+    <div class="bg-gray-800 text-white flex justify-between items-center p-2">
+        <div class="flex items-center">
+            <img src="/images uomo/envato.svg" alt="Envato Market" class="h-6 mr-2">
+        </div>
+        <button class="bg-green-500 text-white px-4 py-2 rounded">Buy now</button>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <img src="/images uomo/uomo.webp" alt="UQM Logo" class="h-8">
+            </div>
+            <nav class="hidden lg:flex space-x-4 ml-10" id="nav-menu">
+                <a href="/index6.html" class="text-red-500">Home</a>
+                <a href="/shop.html" class="text-gray-700 hover:text-gray-900">Shop</a>
+                <a href="/blog.html" class="text-gray-700 hover:text-gray-900">Blog</a>
+                <a href="/pages.html" class="text-gray-700 hover:text-gray-900">Pages</a>
+                <a href="/about.html" class="text-gray-700 hover:text-gray-900">About</a>
+                <a href="/contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
+            </nav>
+            <div class="flex space-x-4 items-center ml-auto">
+                <button><img src="/images uomo/search.png" alt="Search" class="h-5"></button>
+                <button><img src="/images uomo/id.png" alt="User" class="h-5"></button>
+                <button><img src="/images uomo/heart.png" alt="Favorites" class="h-5"></button>
+                <div class="relative">
+                    <button><img src="/images uomo/cart.png" alt="Cart" class="h-5"></button>
+                    <span class="absolute top-0 right-0 bg-yellow-500 text-white text-xs rounded-full px-1">0</span>
+                </div>
+                <button class="block lg:hidden" id="menu-button">
+                    <img src="/images uomo/menu.png" alt="Menu" class="h-5">
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+    <!-- About Section -->
+    <section class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">ABOUT UOMO</h2>
+            <div class="flex justify-center">
+                <img src="/images uomo/about-1.jpg" alt="About Uomo" class="w-full md:w-3/4 h-auto object-cover">
+            </div>
+        </div>
+    </section>
+    <!-- Our Story Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 md:px-0">
+            <h2 class="text-3xl font-bold mb-8">OUR STORY</h2>
+            <p class="text-lg mb-4">
+                <strong>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</strong>
+            </p>
+            <p class="text-lg mb-8">
+                Saw wherein fruitful good days image them, midst, waters upon, saw. Seas lights seasons. Fourth hath rule Evening Creepth own lesser years itself so seed fifth for grass evening fourth shall you’re unto that. Had. Female replenish for yielding so saw all one to yielding grass you’ll air sea it, open waters subdue, hath. Brought second Made. Be. Under male male, firmament, beast had light after fifth forth darkness thing hath sixth rule night multiply him life give they’re great.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Our Mission</h3>
+                    <p class="text-lg">
+                        Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Our Vision</h3>
+                    <p class="text-lg">
+                        Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16">
+        <div class="container mx-auto flex flex-wrap items-center">
+            <div class="w-full md:w-1/2 p-4">
+                <img src="/images uomo/about-2.jpg" alt="About Image" class="w-full h-auto">
+            </div>
+            <div class="w-full md:w-1/2 p-4">
+                <h2 class="text-2xl font-bold mb-4">The Company</h2>
+                <p class="text-lg mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sapien dignissim a elementum. Sociis metus, hendrerit mauris id in. Quis sit sit ultrices tincidunt euismod luctus diam. Turpis sodales orci etiam phasellus lacus id leo. Amet turpis nunc, nulla massa est viverra interdum. Praesent auctor nulla morbi non posuere mattis. Arcu eu id maecenas cras.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bottom Icons Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+                <img src="/images uomo/delivery.png" alt="Fast and Free Delivery" class="mx-auto mb-4">
+                <h3 class="text-lg font-bold">FAST AND FREE DELIVERY</h3>
+                <p class="text-sm">Free delivery for all orders over $140</p>
+            </div>
+            <div>
+                <img src="/images uomo/customer support.png" alt="24/7 Customer Support" class="mx-auto mb-4">
+                <h3 class="text-lg font-bold">24/7 CUSTOMER SUPPORT</h3>
+                <p class="text-sm">Friendly 24/7 customer support</p>
+            </div>
+            <div>
+                <img src="/images uomo/money back.png" alt="Money Back Guarantee" class="mx-auto mb-4">
+                <h3 class="text-lg font-bold">MONEY BACK GUARANTEE</h3>
+                <p class="text-sm">We return money within 30 days</p>
+            </div>
+        </div>
+    </section>
+        
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-200 py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-left">
+            <!-- Logo and Contact -->
+            <div>
+                <img src="/images uomo/uomo.webp" alt="UQM Logo" class="h-8 mb-4">
+                <p>1418 River Drive, Suite 35 Cottonhall, CA 96222 United States</p>
+                <p class="mt-2">sale@uomo.com</p>
+                <p class="mt-2">+1 246-345-0695</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#"><img src="/images uomo/facebook.svg" alt="Facebook" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/x.svg" alt="Twitter" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/insta.svg" alt="Instagram" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/yt.svg" alt="YouTube" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/pintrest.svg" alt="Pinterest" class="h-6"></a>
+                </div>
+            </div>
+
+            <!-- Company Links -->
+            <div>
+                <h3 class="font-bold mb-4">COMPANY</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Careers</a></li>
+                    <li><a href="#" class="hover:underline">Affiliates</a></li>
+                    <li><a href="#" class="hover:underline">Blog</a></li>
+                    <li><a href="#" class="hover:underline">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Shop Links -->
+            <div>
+                <h3 class="font-bold mb-4">SHOP</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">New Arrivals</a></li>
+                    <li><a href="#" class="hover:underline">Accessories</a></li>
+                    <li><a href="#" class="hover:underline">Men</a></li>
+                    <li><a href="#" class="hover:underline">Women</a></li>
+                    <li><a href="#" class="hover:underline">Shop All</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Links -->
+            <div>
+                <h3 class="font-bold mb-4">HELP</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Customer Service</a></li>
+                    <li><a href="#" class="hover:underline">My Account</a></li>
+                    <li><a href="#" class="hover:underline">Find a Store</a></li>
+                    <li><a href="#" class="hover:underline">Legal & Privacy</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                    <li><a href="#" class="hover:underline">Gift Card</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe -->
+            <div>
+                <h3 class="font-bold mb-4">SUBSCRIBE</h3>
+                <p class="mb-4">Be the first to get the latest news about trends, promotions, and much more!</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email address" class="p-2 flex-grow border border-gray-400">
+                    <button type="submit" class="p-2 bg-black text-white">Submit</button>
+                </form>
+                <div class="mt-8">
+                    <img src="/images uomo/payment-options.png" alt="Secure payments" class="w-48">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-sm text-gray-600">
+            <p>&copy;2024 Uomo</p>
+        </div>
+    </footer>
+</body>
+</html>

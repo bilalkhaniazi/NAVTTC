@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background-image {
+            background-image: url("/images uomo/shop_banner_1.png"); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+        }
+        .tab-active {
+            border-bottom: 2px solid black;
+        }
+    </style>
+    <script>
+        function filterProducts(category) {
+            const allProducts = document.querySelectorAll('.product');
+            allProducts.forEach(product => {
+                product.style.display = 'none';
+                if (category === 'all' || product.classList.contains(category)) {
+                    product.style.display = 'block';
+                }
+            });
+            
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('tab-active'));
+            document.getElementById(category).classList.add('tab-active');
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100">
+<!-- Header Section -->
+<header>
+    <!-- Top Bar -->
+    <div class="bg-gray-800 text-white flex justify-between items-center p-2">
+        <div class="flex items-center">
+            <img src="/images uomo/envato.svg" alt="Envato Market" class="h-6 mr-2">
+        </div>
+        <button class="bg-green-500 text-white px-4 py-2 rounded">Buy now</button>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <img src="/images uomo/uomo.webp" alt="UQM Logo" class="h-8">
+            </div>
+            <nav class="hidden lg:flex space-x-4 ml-10" id="nav-menu">
+                <a href="/index6.html" class="text-red-500">Home</a>
+                <a href="/shop.html" class="text-gray-700 hover:text-gray-900">Shop</a>
+                <a href="/blog.html" class="text-gray-700 hover:text-gray-900">Blog</a>
+                <a href="/pages.html" class="text-gray-700 hover:text-gray-900">Pages</a>
+                <a href="/about.html" class="text-gray-700 hover:text-gray-900">About</a>
+                <a href="/contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
+            </nav>
+            <div class="flex space-x-4 items-center ml-auto">
+                <button><img src="/images uomo/search.png" alt="Search" class="h-5"></button>
+                <button><img src="/images uomo/id.png" alt="User" class="h-5"></button>
+                <button><img src="/images uomo/heart.png" alt="Favorites" class="h-5"></button>
+                <div class="relative">
+                    <button><img src="/images uomo/cart.png" alt="Cart" class="h-5"></button>
+                    <span class="absolute top-0 right-0 bg-yellow-500 text-white text-xs rounded-full px-1">0</span>
+                </div>
+                <button class="block lg:hidden" id="menu-button">
+                    <img src="/images uomo/menu.png" alt="Menu" class="h-5">
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+    <section class="background-image relative h-96 flex items-center">
+        <div class="container mx-auto">
+            <h1 class="text-6xl font-bold text-black">JACKETS & COATS</h1>
+            <div class="mt-4">
+                <nav class="flex space-x-4">
+                    <button id="all" class="tab tab-active px-4 py-2 text-black" onclick="filterProducts('all')">ALL</button>
+                    <button id="stayhome" class="tab px-4 py-2 text-black" onclick="filterProducts('stayhome')">STAYHOME</button>
+                    <button id="jackets" class="tab px-4 py-2 text-black" onclick="filterProducts('jackets')">JACKETS</button>
+                    <button id="hoodies" class="tab px-4 py-2 text-black" onclick="filterProducts('hoodies')">HOODIES</button>
+                    <button id="men" class="tab px-4 py-2 text-black" onclick="filterProducts('men')">MEN</button>
+                    <button id="women" class="tab px-4 py-2 text-black" onclick="filterProducts('women')">WOMEN</button>
+                    <button id="accessories" class="tab px-4 py-2 text-black" onclick="filterProducts('accessories')">ACCESSORIES</button>
+                    <button id="shoes" class="tab px-4 py-2 text-black" onclick="filterProducts('shoes')">SHOES</button>
+                </nav>
+            </div>
+        </div>
+    </section>
+            <!-- Filters -->
+            <section class="py-4">
+                <div class="container mx-auto flex justify-between items-center">
+                    <div class="text-gray-600">Home / The Shop</div>
+                    <div class="flex space-x-4 items-center">
+                        <div class="text-gray-600">Default Sorting</div>
+                        <div class="text-gray-600">View 2 3 4</div>
+                        <div class="text-gray-600">Filter</div>
+                    </div>
+                </div>
+            </section>
+        <!-- Products Section -->
+        <section class="py-16">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="product all p-4">
+                    <img src="/images uomo/product1.jpg" alt="Product 1" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Cropped Faux Leather Jacket</div>
+                        <div class="text-gray-800">$29</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                        <div class="text-gray-600 text-sm">8k+ reviews</div>
+                    </div>
+                </div>
+                <div class="product all p-4">
+                    <img src="/images uomo/product2.jpg" alt="Product 2" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Calvin Shorts</div>
+                        <div class="text-gray-800">$62</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="product all p-4">
+                    <img src="/images uomo/product3.jpg" alt="Product 3" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Kirby T-Shirt</div>
+                        <div class="text-gray-800">$17</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="product all p-4">
+                    <img src="/images uomo/product4.jpg" alt="Product 4" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Cableknit Shawl</div>
+                        <div class="text-gray-800 line-through">$129</div>
+                        <div class="text-red-500">$99</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="product all p-4">
+                    <img src="/images uomo/product5.jpg" alt="Product 5" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Colorful Jacket</div>
+                        <div class="text-gray-800">$29</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="product all p-4">
+                    <img src="/images uomo/product6.jpg" alt="Product 6" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Shirt in Botanical Cheetah Print</div>
+                        <div class="text-gray-800">$62</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="product all p-4">
+                    <img src="/images uomo/product7.jpg" alt="Product 7" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Cotton Jersey T-Shirt</div>
+                        <div class="text-gray-800">$17</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="product all p-4">
+                    <img src="/images uomo/product8.jpg" alt="Product 8" class="w-full h-64 object-cover mb-2">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-600">Dresses</div>
+                        <div class="font-bold text-lg">Zessi Dresses</div>
+                        <div class="text-gray-800 line-through">$129</div>
+                        <div class="text-red-500">$99</div>
+                        <div class="text-yellow-500">★★★★☆</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-200 py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-left">
+            <!-- Logo and Contact -->
+            <div>
+                <img src="/images uomo/uomo.webp" alt="UQM Logo" class="h-8 mb-4">
+                <p>1418 River Drive, Suite 35 Cottonhall, CA 96222 United States</p>
+                <p class="mt-2">sale@uomo.com</p>
+                <p class="mt-2">+1 246-345-0695</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#"><img src="/images uomo/facebook.svg" alt="Facebook" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/x.svg" alt="Twitter" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/insta.svg" alt="Instagram" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/yt.svg" alt="YouTube" class="h-6"></a>
+                    <a href="#"><img src="/images uomo/pintrest.svg" alt="Pinterest" class="h-6"></a>
+                </div>
+            </div>
+
+            <!-- Company Links -->
+            <div>
+                <h3 class="font-bold mb-4">COMPANY</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Careers</a></li>
+                    <li><a href="#" class="hover:underline">Affiliates</a></li>
+                    <li><a href="#" class="hover:underline">Blog</a></li>
+                    <li><a href="#" class="hover:underline">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Shop Links -->
+            <div>
+                <h3 class="font-bold mb-4">SHOP</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">New Arrivals</a></li>
+                    <li><a href="#" class="hover:underline">Accessories</a></li>
+                    <li><a href="#" class="hover:underline">Men</a></li>
+                    <li><a href="#" class="hover:underline">Women</a></li>
+                    <li><a href="#" class="hover:underline">Shop All</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Links -->
+            <div>
+                <h3 class="font-bold mb-4">HELP</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Customer Service</a></li>
+                    <li><a href="#" class="hover:underline">My Account</a></li>
+                    <li><a href="#" class="hover:underline">Find a Store</a></li>
+                    <li><a href="#" class="hover:underline">Legal & Privacy</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                    <li><a href="#" class="hover:underline">Gift Card</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe -->
+            <div>
+                <h3 class="font-bold mb-4">SUBSCRIBE</h3>
+                <p class="mb-4">Be the first to get the latest news about trends, promotions, and much more!</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email address" class="p-2 flex-grow border border-gray-400">
+                    <button type="submit" class="p-2 bg-black text-white">Submit</button>
+                </form>
+                <div class="mt-8">
+                    <img src="/images uomo/payment-options.png" alt="Secure payments" class="w-48">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-sm text-gray-600">
+            <p>&copy;2024 Uomo</p>
+        </div>
+    </footer>
+</body>
+
+</html>
